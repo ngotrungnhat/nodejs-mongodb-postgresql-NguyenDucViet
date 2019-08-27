@@ -1,2 +1,2 @@
-# nodejs-mongodb-postgresql-NguyenDucViet
-Course learn back-end Nguyễn Đức Việt
+# nodejs-mongodb-postgresql
+Course learn back-end
