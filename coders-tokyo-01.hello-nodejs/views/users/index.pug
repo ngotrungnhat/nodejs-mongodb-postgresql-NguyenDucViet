@@ -1,9 +1,24 @@
-h1 User List
-form(action="/users/search", method="GET")
-    input(type="text", name="q")
-    button(type="submit") Search
-ul
+extends ../layouts/common.pug
+block navBar
+
+  table.table.table-striped.table-inverse
+    thead
+      tr
+        th id
+        th Name
+        th Phone
+        th Action
+    tbody
     each val in users
-        li #{val.id}: #{val.name}
-    
-    
+      tr
+        td #{val.id}
+        td #{val.name}
+        td #{val.phone}
+        td 
+            a(onclick='true', href='/delete/<%= item.id %>')
+                i.fa.fa-trash(aria-hidden='true')
+            |   |  
+            a(href='/update/<%= item.id %>')
+                i.fa.fa-edit
+     
+  block footer

@@ -1,12 +1,7 @@
-const users = [
-    {id: 1, name: 'One'},
-    {id: 2, name: 'Two'},
-    {id: 3, name: 'Three'},
-    {id: 4, name: 'Four'},
-    {id: 5, name: 'Five'},
-    {id: 6, name: 'Six'},
-    {id: 7, name: 'Seven'}
-]
+const shortid = require('shortid');
+const db = require('../db')
+
+const users = db.get('users').value()
 
 module.exports = {
     index: (req, res)=>{
@@ -20,6 +15,28 @@ module.exports = {
         const matchUser = users.filter((user)=>{
             return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
         })
-        res.render('users/index', {users: matchUser})
+        res.render('users/index', {users: matchUser, value: q})
+    },
+    userCreate: (req, res) => {
+        res.render('users/create')
+    },
+    userPostCreate: (req, res) => {
+        const error = [];
+        if (!req.body.name) {
+            error.push('Name is require')
+        }
+        if (!req.body.phone) {
+            error.push('Phone is require')
+        }
+        if (error.length) {
+            res.render('users/create', {
+                errors: error,
+                values: req.body
+            })
+            return;
+        }
+        req.body.id = shortid.generate()
+        db.get('users').push(req.body).write()
+        res.redirect('/users')
     }
 }

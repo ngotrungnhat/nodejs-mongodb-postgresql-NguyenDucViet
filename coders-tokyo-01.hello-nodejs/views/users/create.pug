@@ -1,0 +1,23 @@
+extends ./../layouts/common
+block navBar
+
+    h1.text-center Create New User
+    if errors
+        each error in errors
+            .alert.alert-danger.alert-dismissible
+                button.close(type='button', data-dismiss='alert') &times;
+                strong Warning!
+                |  #{error}.
+
+    .form-group.container.border.border-dark.rounded.bg-light.w-50.p-3.mt-5
+        form(action='/users/create', method='post')
+            label(for='name') Name
+            input#name.form-control(type='text', value=values ? values.name : "", name='name', placeholder='Write Name')
+            br
+            label(for='phone') Phone
+            input#phone.form-control(type='text', value=values ? values.phone : "", name='phone', placeholder='Write Phone')
+            br
+            button.btn.btn-outline-primary(type='submit')  Create User 
+
+    block footer
+    
