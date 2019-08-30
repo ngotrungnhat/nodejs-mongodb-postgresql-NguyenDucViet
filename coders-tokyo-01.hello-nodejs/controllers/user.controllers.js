@@ -6,7 +6,7 @@ const users = db.get('users').value()
 module.exports = {
     index: (req, res)=>{
         res.render('index', {name: 'Nhat'});
-    },
+     },
     users: (req, res) => {
         res.render('users/index', {users: users})
     },
@@ -21,20 +21,6 @@ module.exports = {
         res.render('users/create')
     },
     userPostCreate: (req, res) => {
-        const error = [];
-        if (!req.body.name) {
-            error.push('Name is require')
-        }
-        if (!req.body.phone) {
-            error.push('Phone is require')
-        }
-        if (error.length) {
-            res.render('users/create', {
-                errors: error,
-                values: req.body
-            })
-            return;
-        }
         req.body.id = shortid.generate()
         db.get('users').push(req.body).write()
         res.redirect('/users')

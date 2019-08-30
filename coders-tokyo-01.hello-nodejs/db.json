@@ -7,97 +7,41 @@
     {
       "id": "nQGF-_uxs",
       "name": "Iron Man",
-      "phone": "90190992"
-    },
-    {
-      "id": "liE3F1zaj",
-      "name": "One",
-      "phone": "cijsncds"
-    },
-    {
-      "id": "dJBkTRjMW",
-      "name": "Viettel",
-      "phone": "18008198"
-    },
-    {
-      "id": "0edOwXN8W",
-      "name": "",
-      "phone": ""
-    },
-    {
-      "name": "Luffy",
-      "phone": "09588934839",
-      "id": "y8i3hkrzE"
-    },
-    {
-      "name": "rr",
-      "phone": "",
-      "id": "E5974XHe7"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "IWTlP2PXK"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "Z8jlb3Ic6"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "jWQaBuMDh"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "Gl1EhrEAhm"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "76rWuTpvn"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "WhrjoHLLZ"
-    },
-    {
-      "name": "DELETE",
-      "phone": "",
-      "id": "6gGvmCR5I"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "LRS01u7n4"
-    },
-    {
-      "name": "Viettel",
-      "phone": "",
-      "id": "CLPa03ymp"
-    },
-    {
-      "name": "Viettel",
-      "phone": "18008198",
-      "id": "StxI9bwrI"
-    },
-    {
-      "name": "nhat",
-      "phone": "#{values.phone}",
-      "id": "_No9TNCTe"
+      "phone": "90190992",
+      "email": "ngonhat95@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
       "name": "nhat",
       "phone": "45454",
-      "id": "g_9LuBUrv"
+      "id": "g_9LuBUrv",
+      "email": "ngonhat000@gmail.com",
+      "password": "9d93ea68e73caf676b0b532cf7078c12"
     },
     {
       "name": "ffff",
       "phone": "444",
       "id": "530Dv6T2W"
+    },
+    {
+      "name": "Viettel",
+      "phone": "18008198",
+      "id": "KOqlkCiZq"
+    },
+    {
+      "name": "Viettel",
+      "phone": "333",
+      "id": "zxzCtHkMt"
+    },
+    {
+      "name": "Viettel",
+      "phone": "333",
+      "id": "SdrM7j_Wv"
+    },
+    {
+      "name": "DELETE",
+      "phone": "222",
+      "id": "ldCYGe9WO"
     }
   ]
 }

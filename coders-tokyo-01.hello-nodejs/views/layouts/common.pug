@@ -25,6 +25,8 @@ body
                 input.form-control.mr-sm-2(type='text', name='q', placeholder='Search', aria-label='Search')
                 button.btn.btn-outline-success.my-2.my-sm-0(type='submit')
                     | Search
+        if user
+            h3= user.name
 block navBar
 
 
