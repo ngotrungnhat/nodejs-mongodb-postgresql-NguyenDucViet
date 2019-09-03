@@ -4,15 +4,19 @@ block navBar
   table.table.table-striped.table-inverse
     thead
       tr
-        th id
+        th Stt
         th Name
+        th Email
         th Phone
         th Action
     tbody
     each val in users
       tr
-        td #{val.id}
+        td #{val.stt}
+        td 
+          img(src=val.avatar width="30")
         td #{val.name}
+        td #{val.email}
         td #{val.phone}
         td 
             a(onclick='true', href='/delete/<%= item.id %>')
@@ -20,5 +24,24 @@ block navBar
             |   |  
             a(href='/update/<%= item.id %>')
                 i.fa.fa-edit
-     
+            |   |  
+            a(href='/friend/add/'+ val.id)
+                i.fa.fa-user-plus
+  hr
+  nav.ml-4(aria-label='...')
+    ul.pagination
+      li.page-item.disabled
+        a.page-link(href='#', tabindex='-1') Previous
+      li.page-item
+        a.page-link(href='#') 1
+      li.page-item.active
+        a.page-link(href='#')
+          | 2 
+          span.sr-only (current)
+      li.page-item
+        a.page-link(href='#') 3
+      li.page-item
+        a.page-link(href='#') Next
+
+
   block footer

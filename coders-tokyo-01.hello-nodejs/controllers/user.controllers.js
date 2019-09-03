@@ -5,10 +5,16 @@ const users = db.get('users').value()
 
 module.exports = {
     index: (req, res)=>{
-        res.render('index', {name: 'Nhat'});
+        res.render('index');
      },
     users: (req, res) => {
-        res.render('users/index', {users: users})
+        const page = parseInt(req.query.page) || 1; //n
+        const perPage = 10; //x
+        const start = (page - 1) * perPage;
+        const end = page * perPage;
+        const usersPrint = users.slice(start, end)
+
+        res.render('users/index', {users: usersPrint})
     },
     usersSearch: (req, res) => {
         const q = req.query.q
@@ -22,6 +28,8 @@ module.exports = {
     },
     userPostCreate: (req, res) => {
         req.body.id = shortid.generate()
+        const pathAvatar = req.file.path.split('/').slice(1).join('/')
+        req.body.avatar = pathAvatar;
         db.get('users').push(req.body).write()
         res.redirect('/users')
     }

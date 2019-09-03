@@ -8,12 +8,12 @@ head
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
 body
-    nav.navbar.navbar-expand-lg.navbar-light.bg-primary
+    nav.navbar.navbar-expand-lg.navbar-light.bg-danger
         a.navbar-brand(href='/') 
             img.w-10.h-10(src="/../../images/logo.png", alt="logo nodejs")
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
+        #navbarSupportedContent.collapse.navbar-collapse.ml-4
             ul.navbar-nav.mr-auto
                 li.nav-item
                     a.nav-link(href='/') Home
@@ -21,12 +21,17 @@ body
                     a.nav-link(href='/users') Users
                 li.nav-item
                     a.nav-link(href='/users/create') Create User
-            form.form-inline.my-2.my-lg-0(action='/users/search', method='GET')
+                li.nav-item
+                    a.nav-link(href='/users/create') Friends
+                    p= numFriend
+            form.form-inline.my-2.my-lg-0.mr-3(action='/users/search', method='GET')
                 input.form-control.mr-sm-2(type='text', name='q', placeholder='Search', aria-label='Search')
                 button.btn.btn-outline-success.my-2.my-sm-0(type='submit')
                     | Search
         if user
-            h3= user.name
+            p= user.name
+            div
+                img(src= user.avatar, alt="Avatar", width='50')
 block navBar
 
 

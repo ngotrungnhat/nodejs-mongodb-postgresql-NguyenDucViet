@@ -10,12 +10,21 @@ block navBar
                 |  #{error}.
 
     .form-group.container.border.border-dark.rounded.bg-light.w-50.p-3.mt-5
-        form(action='/users/create', method='post')
+        form(action='/users/create', method='post' enctype="multipart/form-data")
             label(for='name') Name
             input#name.form-control(type='text', value=values ? values.name : "", name='name', placeholder='Write Name')
             br
+            label(for='email') Email
+            input#email.form-control(type='text', value=values ? values.email : "", name='email', placeholder='Write email')
+            br
             label(for='phone') Phone
             input#phone.form-control(type='text', value=values ? values.phone : "", name='phone', placeholder='Write Phone')
+            br
+            label(for='password') Password
+            input#password.form-control(type='password', value=values ? values.phone : "", name='password', placeholder='Write password')
+            br
+            label(for='avatar') Avatar
+            input#avatar.form-control(type='file', value=values ? values.phone : "", name='avatar')
             br
             button.btn.btn-outline-primary(type='submit')  Create User 
 
