@@ -11,6 +11,8 @@ var app = express();
 
 var mongoose = require('mongoose');
 
+var userApi = require('./api/routes/user.route')
+
 mongoose.connect('mongodb://localhost/contact', {useNewUrlParser: true});
 
 // view engine setup
@@ -25,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use('/api/users', userApi)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

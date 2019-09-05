@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
 /* GET view page. */
 router.get('/view', function(req, res, next) {
   userModel.find({/* condition */}, function(err, data){
-    res.render('view', { title: 'view view', dulieu: data });
+    res.json()
+    // res.render('view', { title: 'view view', dulieu: data });
   })
 });
 
